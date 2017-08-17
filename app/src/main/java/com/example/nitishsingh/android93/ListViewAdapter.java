@@ -38,18 +38,19 @@ public class ListViewAdapter extends BaseAdapter {
     public long getItemId(int i) {
         return 0;
     }
-
+    //here we are creating viewhOLDER CLASS
     private class ViewHolder {
+        //Declaration of set of views
         TextView txtViewTitle;
         TextView txtViewDescription;
     }
 
-
+    //Method getView()
     @Override
     public View getView(int position, View view, ViewGroup parent) {
         ViewHolder holder;
-        LayoutInflater inflater = context.getLayoutInflater();
-
+        LayoutInflater inflater = context.getLayoutInflater();//retreving layout of current context
+        //Here we are applying condition 
         if (view == null) {
 
             view = inflater.inflate(R.layout.row_main,null);
@@ -62,10 +63,10 @@ public class ListViewAdapter extends BaseAdapter {
         {
             holder = (ViewHolder) view.getTag();
         }
-        holder.txtViewTitle.setText(title[position]);
-        holder.txtViewDescription.setText(description[position]);
+        holder.txtViewTitle.setText(title[position]);//setting title
+        holder.txtViewDescription.setText(description[position]);//setting Desciption
 
-        return view;
+        return view;//return view
 
     }
 }
